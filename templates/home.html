@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section position-relative text-center text-white py-5" style="background-image: url('{% static "images/hero/hero_background.jpg" %}'); background-size: cover; background-position: center;">
+    <div class="overlay position-absolute top-0 start-0 end-0 bottom-0" style="background: rgba(0, 0, 0, 0.6);"></div>
+    <div class="container position-relative">
+        <h1 class="display-4 fw-bold mb-3">Selamat datang di Dosenku!</h1>
+        <p class="lead mb-4">Cari dan beri ulasan kepada dosen kamu.</p>
+        <form action="{% url 'professor_search' %}" method="get" class="d-flex justify-content-center mt-4">
+            <input type="text" name="q" class="form-control search-input me-2" placeholder="Cari dosen, mata kuliah, jurusan..." style="max-width: 400px;">
+            <button type="submit" class="btn btn-primary px-4">Cari</button>
+        </form>
+        <div class="mt-3">
+            <a href="{% url 'professor_list' %}" class="btn btn-outline-light">Lihat Semua Dosen</a>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action Section -->
+{% if not user.is_authenticated %}
+<section class="cta-section py-5 text-center text-white" style="background-color: #343a40;">
+    <div class="container">
+        <h2 class="display-6 fw-bold mb-4">Siap Memulai?</h2>
+        <p class="lead mb-4">Bergabunglah dengan komunitas kami untuk menemukan dosen terbaik.</p>
+        <a href="{% url 'account_signup' %}" class="btn btn-primary px-4 py-2">Sign Up Sekarang</a>
+    </div>
+</section>
+{% endif %}
+{% endblock content %}

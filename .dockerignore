@@ -1,0 +1,11 @@
+.venv
+.git
+.gitignore
+.terraform
+main.tf
+database.tf
+domain.tf
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars

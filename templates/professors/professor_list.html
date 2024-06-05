@@ -1,0 +1,27 @@
+{% extends '_base.html' %}
+{% block content %}
+<section class="container my-5">
+    <h1 class="text-center fw-bold mb-4">Daftar Dosen</h1>
+    <div class="row g-4">
+        {% for professor in professors %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">
+                        <a href="{% url 'professor_detail' professor.pk %}" class="text-decoration-none text-dark">{{ professor.name }}</a>
+                    </h5>
+                    <p class="card-text mb-2"><strong>Fakultas:</strong> {{ professor.department.name }}</p>
+                    <p class="card-text mb-2"><strong>Jurusan:</strong> {{ professor.major.name }}</p> 
+                    <p class="card-text mb-4"><strong>Mata Kuliah:</strong> {{ professor.subjects.all|join:", " }}</p>
+                    <a href="{% url 'professor_detail' professor.pk %}" class="mt-auto btn btn-primary btn-sm">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <p class="text-muted">Tidak ada dosen yang ditemukan.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}

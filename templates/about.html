@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+{% block content %}
+<section class="container my-5">
+    <div class="card shadow-sm p-4">
+        <h1 class="card-title text-center fw-bold mb-4">Tentang Dosenku</h1>
+        <div class="card-body">
+            <p class="lead text-center mb-4">Dosenku adalah platform evaluasi dan penilaian dosen yang dikhususkan untuk mahasiswa Jurusan Sistem Informasi di Universitas Gunadarma, bertujuan untuk membantu mahasiswa dalam membuat keputusan berdasarkan pengalaman rekan-rekan mereka.</p>
+            <p>Dosenku berkomitmen untuk menyediakan sumber daya yang berharga bagi mahasiswa Jurusan Sistem Informasi yang mencari wawasan objektif tentang kinerja dosen. Platform ini menawarkan berbagai fitur, termasuk ulasan anonim, kemampuan mengelola penilaian, dan rekomendasi kursus, semuanya dimaksudkan untuk mendukung keberhasilan akademis mahasiswa.</p>
+            <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item"><strong>Ulasan Anonim:</strong> Privasi setiap ulasan diprioritaskan untuk memastikan bahwa semua umpan balik bersifat jujur dan membawa dampak positif.</li>
+                <li class="list-group-item"><strong>Manajemen Penilaian:</strong> Fitur ini memungkinkan Anda untuk merevisi dan memperbarui penilaian terhadap dosen, memberikan fleksibilitas dan kontrol yang lebih kepada pengguna.</li>
+                <li class="list-group-item"><strong>Rekomendasi Kursus:</strong> Manfaatkan ulasan dari rekan mahasiswa untuk menentukan kursus yang paling sesuai dengan kebutuhan dan tujuan akademik Anda.</li>
+            </ul>
+            <p class="text-muted">Dosenku terus berinovasi dan berkomitmen untuk meningkatkan kualitas pengajaran di Jurusan Sistem Informasi Universitas Gunadarma. Kami berharap platform ini menjadi alat bantu yang efektif bagi komunitas mahasiswa dan dosen di jurusan ini.</p>
+            <p>Untuk informasi lebih lanjut, silakan kunjungi halaman <a href="{% url 'contact' %}">Kontak</a>, <a href="{% url 'agreement' %}">Perjanjian Pengguna</a>, dan <a href="{% url 'guidelines' %}">Panduan Penggunaan</a>.</p>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% block content %}
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4 text-danger">Anda yakin ingin menghapus penilaian ini?</h2>
+    <div class="card shadow-sm mx-auto p-4" style="max-width: 600px;">
+        <div class="card-body text-center">
+            <form method="post">
+                {% csrf_token %}
+                <p class="mb-4 text-muted">Tindakan ini tidak dapat dibatalkan.</p>
+                <button type="submit" class="btn btn-danger me-2">Hapus Penilaian</button>
+                <a href="{% url 'professor_list' %}" class="btn btn-secondary">Batal</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}
